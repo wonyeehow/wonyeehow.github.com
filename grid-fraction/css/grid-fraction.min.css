@@ -1,0 +1,6 @@
+.full{width:100%}.half{width:50%}.third2{width:66.66666666666667%}.third1{width:33.333333333333336%}.quarter3{width:75%}.quarter2{width:50%}.quarter1{width:25%}
+.fifth4{width:80%}.fifth3{width:60%}.fifth2{width:40%}.fifth1{width:20%}.sixth5{width:83.33333333333334%}.sixth4{width:66.66666666666667%}.sixth3{width:50%}
+.sixth2{width:33.333333333333336%}.sixth1{width:16.666666666666668%}.row-fraction{margin-left:0}.row-fraction .full,.row-fraction .half,.row-fraction [class*="third"],.row-fraction [class*="quarter"],.row-fraction [class*="fifth"],.row-fraction [class*="sixth"]{float:left}
+.row-balance{padding:10px}.row-padding .inner{padding:10px}.row-margin .inner{margin:10px}.row-border .inner{border:1px solid}@media(max-width:480px){.row-mobile .full,.row-mobile .half,.row-mobile [class*="third"],.row-mobile [class*="quarter"],.row-mobile [class*="fifth"],.row-mobile [class*="sixth"]{width:100%}
+}@media(max-width:767px){.row-tablet .full,.row-tablet .half,.row-tablet [class*="third"],.row-tablet [class*="quarter"],.row-tablet [class*="fifth"],.row-tablet [class*="sixth"]{width:100%}
+}
