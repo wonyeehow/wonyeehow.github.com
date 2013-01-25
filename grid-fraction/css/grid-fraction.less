@@ -48,12 +48,73 @@
 	}
 	.sixth (0) {}
 	.sixth (5);
+
+	.seventh (@index) when (@index > 0) {
+		//default
+		(~".seventh@{index}") {
+			width: ((100 / 7) * @index) * 1%;
+		}
+		.seventh(@index - 1);
+	}
+	.seventh (0) {}
+	.seventh (6);
+
+	.eighth (@index) when (@index > 0) {
+		//default
+		(~".eighth@{index}") {
+			width: ((100 / 8) * @index) * 1%;
+		}
+		.eighth(@index - 1);
+	}
+	.eighth (0) {}
+	.eighth (7);
+
+	.nineth (@index) when (@index > 0) {
+		//default
+		(~".nineth@{index}") {
+			width: ((100 / 9) * @index) * 1%;
+		}
+		.nineth(@index - 1);
+	}
+	.nineth (0) {}
+	.nineth (8);
+
+	.tenth (@index) when (@index > 0) {
+		//default
+		(~".tenth@{index}") {
+			width: ((100 / 10) * @index) * 1%;
+		}
+		.tenth(@index - 1);
+	}
+	.tenth (0) {}
+	.tenth (9);
+
+	.eleventh (@index) when (@index > 0) {
+		//default
+		(~".eleventh@{index}") {
+			width: ((100 / 11) * @index) * 1%;
+		}
+		.eleventh(@index - 1);
+	}
+	.eleventh (0) {}
+	.eleventh (10);
+
+	.tvelveth (@index) when (@index > 0) {
+		//default
+		(~".tvelveth@{index}") {
+			width: ((100 / 12) * @index) * 1%;
+		}
+		.tvelveth(@index - 1);
+	}
+	.tvelveth (0) {}
+	.tvelveth (11);
 }
 .gen_col();
 
 .row-fraction {
 	margin-left: 0;
-	.full, .half, [class*="third"], [class*="quarter"], [class*="fifth"], [class*="sixth"] {
+	clear: both;
+	.full, .half, [class*="third"], [class*="quarter"], [class*="fifth"], [class*="sixth"], [class*="seventh"], [class*="eighth"], [class*="nineth"], [class*="tenth"], [class*="eleventh"], [class*="tvelveth"] {
 		float: left;
 	}
 }
@@ -76,15 +137,23 @@
 	}
 }
 @media (max-width: 480px) {
-	.row-mobile {
-		.full, .half, [class*="third"], [class*="quarter"], [class*="fifth"], [class*="sixth"] {
+	.row-phone {
+		.full, .half, [class*="third"], [class*="quarter"], [class*="fifth"], [class*="sixth"], [class*="seventh"], [class*="eighth"], [class*="nineth"], [class*="tenth"], [class*="eleventh"], [class*="tvelveth"] {
 			width: 100%;
 		}
 	}
 }
 @media (max-width: 767px) {
+	.row-adaptive {
+		.full, .half, [class*="third"] {
+			width: 100%;
+		}
+		[class*="quarter"], [class*="fifth"], [class*="sixth"], [class*="seventh"], [class*="eighth"], [class*="nineth"], [class*="tenth"], [class*="eleventh"], [class*="tvelveth"] {
+			width: 50%;
+		}
+	}
 	.row-tablet {
-		.full, .half, [class*="third"], [class*="quarter"], [class*="fifth"], [class*="sixth"] {
+		.full, .half, [class*="third"], [class*="quarter"], [class*="fifth"], [class*="sixth"], [class*="seventh"], [class*="eighth"], [class*="nineth"], [class*="tenth"], [class*="eleventh"], [class*="tvelveth"] {
 			width: 100%;
 		}
 	}

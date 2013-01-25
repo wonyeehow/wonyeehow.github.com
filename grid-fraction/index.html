@@ -52,7 +52,7 @@
           <li>Just like using <a href="http://twitter.github.com/bootstrap/scaffolding.html" target="_blank">Twitter Bootstrap Scaffolding</a></li>
           <li>Add <code><b>.row-fraction</b></code> to <code>.row</code></li>
           <li>Use fraction column class instead of <code>.span*</code>, e.g. <code><b>.full</b></code>, <code><b>.half</b></code>, <code><b>.third*</b></code>, <code><b>.quarter*</b></code>, <code><b>.fifth*</b></code>, <code><b>.sixth*</b></code></li>
-          <li>Add <code><b>.inner</b></code> to your inner content for <code><b><a href="#padding">.row-padding</a></b></code>, <code><b><a href="#margin">.row-margin</a></b></code>, <code><b><a href="#balance">.row-balance</a></b></code>, <code><b><a href="#border">.row-border</a></b></code>, <code><b><a href="#mobile">.row-mobile</a></b></code>, <code><b><a href="#tablet">.row-tablet</a></b></code></li>
+          <li>Add <code><b>.inner</b></code> to your inner content for <code><b><a href="#padding">.row-padding</a></b></code>, <code><b><a href="#margin">.row-margin</a></b></code>, <code><b><a href="#balance">.row-balance</a></b></code>, <code><b><a href="#border">.row-border</a></b></code>, <code><b><a href="#phone">.row-phone</a></b></code>, <code><b><a href="#tablet">.row-tablet</a></b></code></li>
         </ol>
         <pre>&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;row <b>row-fraction</b>&quot;&gt; 
@@ -489,10 +489,95 @@
       </section>
 
       <section>
-        <a name="mobile"></a>
-        <h3><code>.row-mobile</code></h3>
-        <p>Make all fraction columns 100% on mobile screen resolutions</p>
-        <div class="row row-fraction row-mobile">
+        <a name="adaptive"></a>
+        <h3><code>.row-adaptive</code></h3>
+        <p>Make all fraction column classes adaptive to small screen resolutions</p>
+        <div class="row row-fraction row-adaptive">
+          <div class="full">
+            .full
+            <div class="inner">.inner</div>
+          </div>
+          <div class="half">
+            .half
+            <div class="inner">.inner</div>
+          </div>
+          <div class="half">
+            .half
+            <div class="inner">.inner</div>
+          </div>
+          <div class="third1">
+            .third1
+            <div class="inner">.inner</div>
+          </div>
+          <div class="third2">
+            .third2
+            <div class="inner">.inner</div>
+          </div>
+          <div class="quarter1">
+            .quarter1
+            <div class="inner">.inner</div>
+          </div>
+          <div class="quarter3">
+            .quarter3
+            <div class="inner">.inner</div>
+          </div>
+          <div class="quarter2">
+            .quarter2
+            <div class="inner">.inner</div>
+          </div>
+          <div class="quarter2">
+            .quarter2
+            <div class="inner">.inner</div>
+          </div>
+          <div class="fifth1">
+            .fifth1
+            <div class="inner">.inner</div>
+          </div>
+          <div class="fifth4">
+            .fifth4
+            <div class="inner">.inner</div>
+          </div>
+          <div class="fifth2">
+            .fifth2
+            <div class="inner">.inner</div>
+          </div>
+          <div class="fifth3">
+            .fifth3
+            <div class="inner">.inner</div>
+          </div>
+          <div class="sixth1">
+            .sixth1
+            <div class="inner">.inner</div>
+          </div>
+          <div class="sixth5">
+            .sixth5
+            <div class="inner">.inner</div>
+          </div>
+          <div class="sixth2">
+            .sixth2
+            <div class="inner">.inner</div>
+          </div>
+          <div class="sixth4">
+            .sixth4
+            <div class="inner">.inner</div>
+          </div>
+          <div class="sixth3">
+            .sixth3
+            <div class="inner">.inner</div>
+          </div>
+          <div class="sixth3">
+            .sixth3
+            <div class="inner">.inner</div>
+          </div>
+        </div>
+      </section>
+
+
+      <section>
+        <a name="phone"></a>
+        <h3><code>.row-phone</code></h3>
+        <p>Make all fraction columns 100% on phone screen resolutions</p>
+        <div class="row row-fraction row-phone">
           <div class="full">
             .full
             <div class="inner">.inner</div>
@@ -658,9 +743,9 @@
 
       <section>
         <a name="combo"></a>
-        <h3><code>.row-fraction.row-padding.row-margin.row-balance.row-border.row-mobile.row-tablet</code></h3>
+        <h3><code>.row-fraction.row-padding.row-margin.row-balance.row-border.row-phone.row-tablet</code></h3>
         <p>Putting all fraction row classes together</p>
-        <div class="row row-fraction row-padding row-margin row-balance row-border row-mobile row-tablet">
+        <div class="row row-fraction row-padding row-margin row-balance row-border row-phone row-tablet">
           <div class="full">
             .full
             <div class="inner">.inner</div>
@@ -743,10 +828,10 @@
       <section>
         <a name="nesting"></a>
         <h3>Nesting</h3>
-        <div class="row row-fraction row-padding row-margin row-balance row-border row-mobile row-tablet">
+        <div class="row row-fraction row-padding row-margin row-balance row-border row-phone row-tablet">
           <div class="third2">
             .third2
-            <div class="row row-fraction row-padding row-margin row-balance row-border row-mobile row-tablet">
+            <div class="row row-fraction row-padding row-margin row-balance row-border row-phone row-tablet">
             <div class="full">
               .full
               <div class="inner">.inner</div>
@@ -827,7 +912,7 @@
           </div>
           <div class="third1">
             .third1
-            <div class="row row-fraction row-padding row-margin row-balance row-border row-mobile row-tablet">
+            <div class="row row-fraction row-padding row-margin row-balance row-border row-phone row-tablet">
             <div class="full">
               .full
               <div class="inner">.inner</div>
@@ -915,7 +1000,7 @@
         <div class="row">
           <div class="span8">
             .span8
-            <div class="row row-fraction row-padding row-margin row-balance row-border row-mobile row-tablet">
+            <div class="row row-fraction row-padding row-margin row-balance row-border row-phone row-tablet">
             <div class="full">
               .full
               <div class="inner">.inner</div>
@@ -996,7 +1081,7 @@
           </div>
           <div class="span4">
             .span4
-            <div class="row row-fraction row-padding row-margin row-balance row-border row-mobile row-tablet">
+            <div class="row row-fraction row-padding row-margin row-balance row-border row-phone row-tablet">
             <div class="full">
               .full
               <div class="inner">.inner</div>
@@ -1082,7 +1167,7 @@
       <section>
         <a name="fluid"></a>
         <h3>Fluid Layout</h3>
-        <div class="row row-fraction row-padding row-margin row-balance row-border row-mobile row-tablet">
+        <div class="row row-fraction row-padding row-margin row-balance row-border row-phone row-tablet">
           <div class="full">
             .full
             <div class="inner">.inner</div>
