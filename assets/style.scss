@@ -4,8 +4,14 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 @import "normalize";
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
 body {
   font-family: 'Monda', sans-serif;
+  background-color: #222;
 }
 #logo {
   position: fixed;
@@ -15,36 +21,19 @@ body {
   z-index: 100;
 }
 .page {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
-}
-.bg {
-  z-index: 1;
-}
-#page1 {
-  .bg {
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
-    background: url('../img/page1/bg.jpg') center center no-repeat;
-    background-size: cover;
-  }
-}
-#page2 {
-  background-color: #234;
-}
-#page3 {
-  background-color: #456;
+  background-color: #444;
+  display: none;
+  overflow: hidden;
 }
 nav {
   opacity: 0;
   position: absolute;
   bottom: 30px;
   left: 0;
-  z-index: 2;
+  z-index: 10;
   h2, .link {
     position: absolute;
     bottom: 0;
@@ -83,12 +72,37 @@ nav {
     }
   }
 }
-.page-show {
+
+.page-current {
+  display: block;
+  z-index: 2;
   nav {
     transform: translate(0, -30px);
     opacity: 1;
     transition-duration: 1s;
     transition-delay: 1s;
+  }
+}
+.page-prev {
+  display: block;
+  z-index: 1
+  nav {
+    opacity: 1;
+  }
+}
+
+.bg {
+  z-index: 3;
+}
+#page1 {
+  .bg {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: url('../img/page1/bg.jpg') center center no-repeat;
+    background-size: cover;
   }
 }
 

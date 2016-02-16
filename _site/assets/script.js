@@ -11,8 +11,9 @@ $(function(){
       var current = 0;
       var next = 1;
 
-      el.page.eq(current).addClass('page-show').css({
-        opacity: 1
+      el.page.eq(current).addClass('page-current').css({
+        //opacity: 1,
+        top: 0
       });
 
       el.page.bind('mousewheel DOMMouseScroll', debounce(function(e) {
@@ -60,18 +61,19 @@ $(function(){
           next = (current + 1) < len ? (current + 1) : 0;
         }
 
-        el.page.eq(next).addClass('page-show');
+        el.page.eq(current).addClass('page-prev');
+        el.page.eq(next).addClass('page-current');
 
         TweenMax.fromTo(el.page.eq(current), 1, {
-          opacity: 1,
-          scale: 1
+          //opacity: 1,
+          scale: 1,
         }, {
-          opacity: 0,
-          scale: 0.8
+          //opacity: 0,
+          scale: 0.8,
         });
 
         TweenMax.fromTo(el.page.eq(next), 1, {
-          opacity: 1,
+          //opacity: 1,
           top: toppos
         }, {
           top: 0
