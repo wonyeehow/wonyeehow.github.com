@@ -16,12 +16,15 @@ $(function(){
       });
 
       el.page.bind('mousewheel DOMMouseScroll', debounce(function(e) {
-        if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-          go('next');
-        } else {
-          go('prev');
+        if ($(e.target).closest('.desc').length === 0) {
+          if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+            go('next');
+          } else {
+            go('prev');
+          }
         }
-      }, 200, true));
+        e.preventDefault();
+      }, 200, false));
 
       $(document).keydown(function(e) {
         switch(e.which) {
@@ -46,6 +49,7 @@ $(function(){
 
       var go = function(direction) {
         reset();
+        fn.descOff();
 
         var toppos = 3000;
 
@@ -126,6 +130,13 @@ $(function(){
         t.parents('.page').addClass('page-desc');
         $(t.attr('href')).addClass('active');
         el.descClose.addClass('active');
+
+        $(document).click(function(e) {
+          var t = $(e.target);
+          if (t.closest('.link').length === 0 && t.closest('.desc').length === 0) {
+            fn.descOff();
+          }
+        });
       });
 
       el.descClose.click(function() {
