@@ -34,23 +34,56 @@ $(function(){
       });
 
       function up() {
-        select.attr('class', defaultClass);
+        select.attr('class', defaultClass).removeAttr('style');
         next = (current - 1) >= 0 ? (current - 1) : len - 1;
         select.eq(current).addClass('page-show page-up-out');
         select.eq(next).addClass('page-show page-up-in');
+
+        TweenMax.fromTo($('.page-up-out'), 1, {
+          opacity: 1,
+          scale: 1
+        }, {
+          opacity: 0,
+          scale: .8,
+          clearProps: 'opacity, scale'
+        });
+        TweenMax.fromTo($('.page-up-in'), 1, {
+          top: -3000
+        }, {
+          top: 0,
+          delay: 1
+        });
+
         current = next;
         bg(current);
         yeehow.descOff();
       }
       function down() {
-        select.attr('class', defaultClass);
+        select.attr('class', defaultClass).removeAttr('style');
         next = (current + 1) < len ? (current + 1) : 0;
         select.eq(current).addClass('page-show page-down-out');
         select.eq(next).addClass('page-show page-down-in');
+
+        TweenMax.fromTo($('.page-down-out'), 1, {
+          opacity: 1,
+          scale: 1
+        }, {
+          opacity: 0,
+          scale: .8,
+          clearProps: 'opacity, scale'
+        });
+        TweenMax.fromTo($('.page-down-in'), 1, {
+          top: 3000
+        }, {
+          top: 0,
+          delay: 1
+        });
+
         current = next;
         bg(current);
         yeehow.descOff();
       }
+
       function bg(num) {
         yeehow.stopFx();
         switch(num+1) {
@@ -61,13 +94,13 @@ $(function(){
             yeehow.fxBubble($('#page2 .bg'));
             break;
           case 3:
-            yeehow.fxSphere($('#page3 .bg'));
+            //yeehow.fxSphere($('#page3 .bg'));
             break;
           case 4:
-            yeehow.fxNest($('#page4 .bg'));
+            //yeehow.fxNest($('#page4 .bg'));
             break;
           case 5:
-            yeehow.page5();
+            //yeehow.page5();
             break;
         }
       }
