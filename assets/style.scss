@@ -11,7 +11,7 @@ body, html {
 }
 body {
   font-family: 'Monda', sans-serif;
-  background-color: #222;
+  background-color: #444;
 }
 #logo {
   position: fixed;
@@ -48,6 +48,7 @@ nav {
   }
   .link {
     left: 280px;
+    white-space: nowrap;
     a {
       color: #fff;
       text-decoration: none;
@@ -94,18 +95,6 @@ nav {
 .bg {
   z-index: 3;
 }
-#page1 {
-  .bg {
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
-    background: url('../img/page1/bg.jpg') center center no-repeat;
-    background-size: cover;
-  }
-}
-
 .desc {
   position: fixed;
   top: 0;
@@ -172,3 +161,82 @@ nav {
     }
   }
 }
+
+#page1 {
+  .bg {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    background: url('../img/bg.jpg') center center no-repeat;
+    background-size: cover;
+  }
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  &.drawsvg {
+    path {
+      stroke: rgba(255, 255, 255, .3);
+      stroke-width: 30px;
+      fill: none;
+    }
+  }  
+}
+#page2 {
+  background-color: #90a959;
+  .bg {
+    position: relative;
+    width: 450px;
+    margin: 50px auto 0;
+  }
+  .shadow {
+    display: none;
+    position: relative;
+  }
+  .svg-container {
+    position: absolute;
+    margin-left: 50px;
+    z-index: 50;
+    width: 400px;
+    path {
+      stroke-width: 0;
+      fill: #aecf66;
+    }
+    &.clone {
+      // display: none;
+      path {
+        fill: #7b9543;
+      }
+    }
+  }
+}
+
+#page3 {
+  background-color: #75b5aa;
+}
+#page4 {
+  background-color: #6a9fb5;
+}
+#page5 {
+  background-color: #aa759f;
+}
+#page5_bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  .bubble {
+    border-radius: 50%;
+    position: absolute;
+  }
+}
+
